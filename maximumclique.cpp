@@ -2,68 +2,8 @@
 #include <vector>
 #include <algorithm>
 #include "matrix.h"
-
-class Edge
-{
-	int start, destination, weight;
-
-public:
-	Edge(int _start,int _destination,int _weight)
-	{
-		start = _start;
-		destination = _destination;
-		weight = _weight;
-	}
-
-	int getStart()
-	{
-		return start;
-	}
-	void setStart(int s)
-	{
-		start = s;
-	}
-	int getDest()
-	{
-		return destination;
-	}
-	void setDest(int d)
-	{
-		destination = d;
-	}
-	int getWeight()
-	{
-		return weight;
-	}
-	void setWeight(int w)
-	{
-		weight = w;
-	}
-};
-
-class Vertex
-{
-public:
-	int start;
-	std::vector<int> clique, adjacency;
-	Vertex(int _start)
-	{
-		start = _start;
-	}
-	int getCount()
-	{
-		return clique.size();
-	}
-	void printClique()
-	{
-		std::cout << "Start: " << start;
-		for (int i = 0; i < clique.size(); i++)
-		{
-			std::cout << clique[i] << std::endl;
-		}
-	}
-
-};
+#include "edge.hpp"
+#include "Vertex.hpp"
 
 std::vector<Vertex> maxClique(int vertices, int edge, std::vector<Edge> edges, matrix &graph, std::vector<Vertex> &clique)
 {
