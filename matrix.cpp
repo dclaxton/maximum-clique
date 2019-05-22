@@ -1,12 +1,3 @@
-/*
-Peyton white
-Assignment 10
-4/22/2019
-CSCI 4270
-
-
-*/
-
 #include "matrix.h"
 
 void matrix::checkForValidHeight(int height) const {
@@ -84,7 +75,7 @@ matrix matrix::plus(const matrix& right) const {
 matrix matrix::minus(const matrix& right) const {
     checkForMatchingDimensions(right.mHeight, right.mWidth);
     matrix difference(mHeight, mWidth);
-    
+
     for (int i = 0; i < mHeight; i++) {
         for (int j = 0; j < mWidth; j++) {
             difference.set(i, j, get(i, j) - right.get(i, j));
@@ -102,7 +93,7 @@ matrix matrix::times(const matrix& right) const {
     int nHeight = mHeight;
     int nWidth = right.mWidth;
 
-    std::vector<double> values(nHeight * nWidth);  
+    std::vector<double> values(nHeight * nWidth);
 
     for (int i = 0; i < nHeight; i++) {
         for (int j = 0; j < nWidth; j++) {
